@@ -6,6 +6,7 @@
 	<body>
 		<?php
 			
+			//Connect to database to retrieve the table
 			require_once('../mysql_connect.php');
 		
 			$query = "SELECT Task, Date_Added FROM tasks";
@@ -13,6 +14,7 @@
 		
 			if($response)
 			{
+				//Creates an HTML table to print all of the data to.
 				echo '<table align="left"
 				cellspacing="15" cellpadding="10">
 				
@@ -20,6 +22,7 @@
 				<td align="left"><b>Date/Time Added</b></td></tr>';
 				
 				
+				//Prints the table row by row
 				while($row = mysqli_fetch_array($response))
 				{
 					echo '<tr><td align="left">' .
@@ -41,6 +44,7 @@
 	
 		?>
 		
+		<!--A link back to the main page-->
 		<a href="TODOapp.php">Back to main page</a>
 	</body>
 </html>

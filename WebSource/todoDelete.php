@@ -4,10 +4,13 @@
 	</head>
 	<body>
 		<?php
+			//Connect to database and create a drop list from the tasks
 			require_once('../mysql_connect.php');
 			
 			$query = "SELECT Task FROM tasks";
 			$response = @mysqli_query($databaseConnect, $query);
+			
+			//Echo prints HTML code to create a drop list
 			echo '<form action="deleteProcess.php" method="post">';
 			echo 'Select a task to delete</br><select name = "deleteChoice">';
 			echo '<option value="">...</option>';
